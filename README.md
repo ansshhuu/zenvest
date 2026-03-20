@@ -235,7 +235,7 @@ Prepare for real-world deployment:
 - Full production rollout  
 
 ---
-## ⚖️ Regulatory & Privacy
+##  Regulatory & Privacy
 
 ### Compliance
 - Operates under **IRDAI Sandbox framework**  
