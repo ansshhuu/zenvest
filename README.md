@@ -1,69 +1,65 @@
-# 🛡️ Zenvest — AI-Powered Parametric Insurance for Delivery Partners
+# Zenvest - Parametric Income Protection for Delivery Partners
+Zenvest is a web-based micro-insurance platform providing **instant, trigger-based payouts** for India’s gig workforce.
 
-> Instant, affordable, AI-driven income protection for India's delivery workforce — delivered via web with bilingual support.
+It replaces manual claims with **automated environmental triggers** (weather, AQI, downtime) so delivery partners aren’t penalized for factors beyond their control.
+<img width="1890" height="987" alt="image" src="https://github.com/user-attachments/assets/977e2199-9761-401e-bf09-475c495deb3e" />
+
 
 ---
-
 ## 📋 Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Persona-Based Scenarios & Workflow](#persona-based-scenarios--workflow)
-3. [Weekly Premium Model](#weekly-premium-model)
-4. [Parametric Triggers](#parametric-triggers)
-5. [Platform Justification: Web](#platform-justification-web)
-6. [AI/ML Integration](#aiml-integration)
-7. [Tech Stack & Development Plan](#tech-stack--development-plan)
-8. [Functional Requirements](#functional-requirements)
+1. [ User Personas & Workflow](#persona-based-scenarios--workflow)
+2. [ Core Enrollment → Claim Workflow](#core-enrollment--claim-workflow)
+3. [ Smart Premium Model](#weekly-premium-model)
+4. [ Parametric Payout Triggers](#parametric-triggers)
+5. [ Why Web (Not an App)](#-why-zenvest-is-a-web-app)
+6. [ AI-Powered Decision Engine](#aiml-integration)
+7. [ Tech Stack](#tech-stack--development-plan)
+8. [ Development Roadmap](#development-plan)
+9. [ Regulatory & Data Security](#-regulatory--privacy)
+10. [ Fraud Detection System (Sentinel)](#adversarial-defense--anti-spoofing-strategy)
 
 ---
-
-## Project Overview
-
-Zenvest is a parametric micro-insurance web platform built specifically for **delivery partners** (Swiggy, Zomato, Dunzo, etc.) who lack access to traditional insurance. The platform provides:
-
-- **Fixed weekly plans** — Starter Shield (₹99), Smart Shield (₹149), Pro Shield (₹249)
-- **Zero-claim-filing** — payouts triggered automatically by verified parametric events (rain, AQI, platform downtime)
-- **Instant UPI payouts** in under 30 seconds via Razorpay
-- **Bilingual UI** (English + Hindi) with AI chatbot support
-- **AI/ML at every layer** — from fraud detection to plan recommendation and churn prevention
-
----
-
 ## Persona-Based Scenarios & Workflow
 
-### Persona 1 — Ravi, Delivery Partner (Swiggy), Mumbai
+### Persona 1 - Veer,Delivery Partner (Swiggy, Mumbai)
 
-**Situation:** Ravi earns ₹600/day but loses income every monsoon week. He has no savings buffer and no insurance.
-
-**Journey:**
-
-1. Opens Zenvest website → registers with Aadhaar + Swiggy platform ID
-2. AI risk profiler scores him: Zone = High rainfall corridor, Tenure = 14 months → **Medium risk tier**
-3. LLM plan explainer recommends **Smart Shield** (₹149/week)
-4. Ravi reviews coverage and pays ₹149 via UPI — **policy is active**
-5. Thursday: Heavy rain crosses parametric threshold
-6. LSTM model had predicted disruption 6 hours ahead → claim pre-authorized
-7. Fraud detection checks GPS (Ravi was on-road) → no anomaly
-8. **₹350 payout credited in 28 seconds. Zero action needed from Ravi.**
-9. Sunday: Renewal recommendation sent via email/SMS
-
----
-
-### Persona 2 — Arjun, Platform Manager / Insurer (Admin)
-
-**Situation:** Arjun manages 12,000 delivery partners and needs aggregate risk visibility.
+- Earns around ₹600/day under normal conditions  
+- Struggles during monsoon → income drops significantly  
+- No savings or insurance safety net  
 
 **Journey:**
 
-1. Logs into Zenvest admin dashboard
-2. Views live loss ratio, zone heatmap, and fraud log
-3. Insurer analytics show predictive next-week claim volume by zone
-4. Flagged fraud cases (GPS spoofing, duplicate claims) routed to human-in-loop review
-5. Exports zone report to inform premium pool allocation
+1. Signs up on **Zenvest** using Aadhaar + Swiggy ID  
+2. Gets offered **Smart Shield** plan for ₹149/week  
+3. Makes payment → policy gets activated instantly  
+4. Heavy rain occurs 
+5. ₹350 is credited to his account within ~30 seconds  
+   -  No claim forms  
+   -  No manual approval  
+6. Later receives a simple **“Renew?”** notification  
 
 ---
 
-### Core Enrollment → Claim Workflow
+###  Persona 2 - Akash,Operations Manager (12,000 Delivery Partners)
+
+**Dashboard Insights:**
+
+-  Real-time loss tracking  
+-  High-risk zones identification  
+-  Fraud detection alerts  
+-  Next-week claim predictions  
+
+**How he uses it:**
+
+- Adjusts premiums dynamically  
+- Identifies risky areas proactively  
+- Detects and prevents fraudulent claims  
+- Makes data-driven operational decisions quickly  
+
+---
+
+## Core Enrollment → Claim Workflow
 
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/1ee11107-1f55-4721-9230-b4ae2f06f81f" />
 
@@ -89,38 +85,36 @@ The AI risk profiler runs at onboarding and each Sunday to recommend the right t
 | AQI forecast | CPCB API |
 | Worker's claim history & trust score | Internal DB |
 
-Workers receive a weekly recommendation and can freely switch plans at each Sunday renewal — no lock-in.
+Workers receive a weekly recommendation and can freely switch plans at each Sunday renewal -no lock-in.
 
 ---
 
-## Parametric Triggers
+## Parametric Triggers (Auto-Payouts)
 
-Payouts fire automatically when a verified external event crosses a defined threshold — no claim filing needed.
+Payouts are triggered automatically when thresholds are met:
 
-| Trigger | Threshold | Payout Range |
-|---|---|---|
-| Rainfall (IMD API) | > 25mm in 3hr window | ₹250–500 |
-| AQI (CPCB API) | > 400 for 4+ hours | ₹250–350 |
-| Platform Downtime | > 2hr outage in worker's zone | ₹200–350 |
-| Curfew / Shutdown | Verified government order | ₹350–500 |
-| Extreme Heat (IMD) | > 45°C for 6hr | ₹200–300 |
+- **Rainfall** → >25mm in 3 hours (IMD API)  
+- **Air Quality** → AQI >400 for 4+ hours (CPCB)  
+- **System Outage** → App downtime >2 hours  
+- **Extreme Heat** → >45°C for 6 hours  
 
-The LSTM model forecasts disruption **6 hours ahead**, enabling pre-authorization before the event peaks.
+---
+## 🌐 Why Zenvest is a Web App
+
+We built **Zenvest** as a responsive web app for one simple reason - it’s faster, easier, and more practical for our users.
 
 ---
 
-## Platform Justification: Web
-
-Zenvest is built as a **responsive web application** — not a native app — for the following reasons:
-
-| Factor | Reasoning |
-|---|---|
-| No install barrier | Delivery partners access via browser — no Play Store approval or storage needed |
-| Cross-device | Works on any Android browser, including low-end phones |
-| Faster to ship | Single web codebase vs. separate iOS/Android builds |
-| Admin dashboard | Insurer portal is naturally web-first |
-| PWA support | Can be saved to home screen, works offline for key screens |
-
+### No Install Needed
+### Works on Any Phone
+- Supports low-end Android devices  
+- No iOS/Android version issues  
+### Instant Updates
+### Web Fits Admin Needs
+### PWA Benefits
+- Add to home screen like an app  
+- Basic offline access for key features
+  
 ---
 
 ## AI/ML Integration
@@ -157,88 +151,186 @@ Worker rates experience post-payout. Sentiment model updates their trust score a
 
 | Layer | Technology |
 |---|---|
-| **Frontend (Web)** | React.js + TailwindCSS |
-| **Admin Dashboard** | React.js + TailwindCSS |
-| **Backend API** | FastAPI (Python) |
-| **Database** | PostgreSQL + Redis (cache) |
-| **ML Pipeline** | scikit-learn, XGBoost, TensorFlow/Keras (LSTM) |
-| **LLM / NLP** | Gemini 1.5 Flash / Pro + IndicBERT |
+| **Frontend (Web)** | React.js + TailwindCSS + PWA |
+| **Backend API** | Node.js (Express / Fastify) |
+| **Database** | MongoDB |
+| **Cache** | Redis |
+| **Async / Events** | AWS SQS |
+| **Rules Engine** | Custom (Node.js-based payout + fraud rules) |
+| **Auth** | JWT + Aadhaar eKYC API |
 | **Payments** | Razorpay UPI API |
-| **Weather / AQI** | IMD API + CPCB API + OpenWeatherMap |
-| **Identity Verification** | Aadhaar eKYC API + liveness model |
-| **Infrastructure** | AWS (ECS + RDS + S3) |
+| **External APIs** | IMD + CPCB + OpenWeatherMap |
+| **Infrastructure** | AWS (EC2 / ECS + S3) |
+| **Monitoring** | CloudWatch |
 | **CI/CD** | GitHub Actions + Docker |
 
 ### Development Plan
 
-**Phase 0 — Foundation (Weeks 1–3)**
-- React.js web app + FastAPI backend scaffolding
-- Aadhaar eKYC + liveness model (MVP)
-- PostgreSQL schema: workers, policies, claims, zones
-- Razorpay UPI sandbox integration
-- English + Hindi UI strings
+## Initial Phase: Foundation
 
-**Phase 1 — Enrollment Flow**
-- Identity → Risk Profiling → Plan Selection → Payment flow
-- XGBoost risk scorer (synthetic data)
-- LLM plan explainer chatbot
+Set up the core system:
 
-**Phase 2 — Parametric Engine**
-- Weather + AQI + platform API integrations
-- Trigger monitor with threshold logic
-- LSTM disruption prediction (v1)
-- Auto claim approval + Razorpay instant payout
-
-**Phase 3 — AI/ML Hardening**
-- Isolation Forest fraud detection + GPS validation
-- Churn predictor + nudge engine
-- NLP post-payout sentiment model
-- Weekly Bayesian risk profile retrain
-
-**Phase 4 — Admin Dashboard**
-- Loss ratio, zone heatmap, fraud log views
-- Predictive claim volume forecast
-- Human-in-loop fraud review interface
-
-**Phase 5 — Launch**
-- Security audit + load testing
-- IRDAI sandbox compliance review
-- Beta with 500 delivery partners in Mumbai + Delhi
-- Production launch
+- React frontend + Node.js (Express/Fastify) backend  
+- Aadhaar eKYC with basic liveness check  
+- MongoDB setup (riders, policies, claims, zones)  
+- Razorpay UPI (sandbox mode)  
+- English + Hindi support  
 
 ---
 
-## Functional Requirements
+## Phase 1: Sign-up & Enrollment
 
-### Weather Prediction System
-Integrates IMD + OpenWeatherMap to show a 7-day risk forecast on the worker's dashboard each Sunday. Feeds into the LSTM disruption model and parametric trigger monitoring.
+Complete rider onboarding flow:
 
-### Payment Plan Options
+**Flow:**  
+ID verification → Risk scoring → Plan selection → Payment  
 
-| Plan | Weekly Premium | Description |
-|---|---|---|
-| 🟢 Starter Shield | ₹99/week | Basic coverage for low-risk days |
-| 🔵 Smart Shield | ₹149/week | Balanced coverage at medium pricing |
-| 🟣 Pro Shield | ₹249/week | Highest coverage with best benefits |
-
-Workers can switch plans freely at each Sunday renewal with no lock-in.
-
-### Bilingual Language Support
-English and Hindi supported across all screens. Language selected at first login and changeable in settings. Chatbot responds in the chosen language. UI strings maintained in `en.json` and `hi.json`.
-
-### Help Chatbot
-GPT-4o powered chatbot answers coverage questions, guides onboarding, and explains payout status in Hindi or English. Unresolved issues escalate to human support via WhatsApp.
+- XGBoost for initial risk scoring (synthetic data)  
+- Basic LLM chatbot to explain plans simply  
 
 ---
 
-## Additional Notes
+## Phase 2: Parametric Payout Engine
 
-**Regulatory Compliance:** Zenvest operates under the IRDAI Sandbox Framework. Aadhaar eKYC is UIDAI-compliant, UPI follows RBI guidelines, and personal data is stored on AWS ap-south-1 (India region).
+Automate payouts based on real-world triggers:
 
-**Privacy & Security:** Aadhaar data tokenized post-verification. GPS used only for fraud detection. DPDP Act 2023 compliant. All APIs over TLS 1.3.
-
-**Financial Model:** 20–30% margin on premiums. 60–65% of pool held as claims reserve. Catastrophic risk reinsured. Target loss ratio < 65%.
+- Integrate weather, AQI, and platform APIs  
+- Real-time threshold checks  
+- LSTM model for early disruption prediction  
+- Auto-approve valid claims  
+- Instant payout via Razorpay  
 
 ---
 
-*Built for India's delivery partners. Powered by AI. Settled in seconds.*
+## Phase 3: AI & Fraud Protection
+
+Improve intelligence and security:
+
+- Isolation Forest + GPS checks for fraud detection  
+- Churn prediction with reminder nudges  
+- NLP on user feedback post-payout  
+- Weekly Bayesian retraining for risk models  
+
+---
+
+## Phase 4: Admin Dashboard
+
+Tools for operations team:
+
+- Live loss ratio tracking  
+- Zone-based heatmaps  
+- Fraud alerts  
+- Next-week claim predictions  
+- Manual review queue for flagged cases  
+
+---
+
+## Phase 5: Launch
+
+Prepare for real-world deployment:
+
+- Security audit + load testing  
+- IRDAI sandbox compliance  
+- Beta launch with 500 delivery partners (Mumbai + Delhi)  
+- Full production rollout  
+
+---
+## ⚖️ Regulatory & Privacy
+
+### Compliance
+- Operates under **IRDAI Sandbox framework**  
+
+### Data Sovereignty
+- Hosted in **AWS ap-south-1 (Mumbai)**  
+- Compliant with **DPDP Act 2023**  
+
+### Security
+- AES-256 encryption (PII)  
+- TLS 1.3 for API communication  
+
+---
+# Adversarial Defense & Anti-Spoofing Strategy
+
+## 1. Problem Statement
+Current verification relies on a single-point failure: **GPS Coordinates**.
+
+A coordinated group of 500+ actors is bypassing this using:
+- Mock location providers  
+- Rooted device overlays  
+
+This triggers false payouts.
+
+We must shift from **"Location Validation" → "Environment Validation"**
+
+---
+
+## 1. The Differentiation
+
+We don’t rely only on GPS. Instead, we check **device behavior + real-world signals** to confirm if a delivery partner is genuinely stranded.
+
+- Real users show:
+  - Natural phone movement  
+  - Changing network signals  
+  - Consistent past routes  
+
+- Fake/spoofed users show:
+  - No movement (static device/emulator)  
+  - Same IP/VPN usage  
+  - Sudden location jumps  
+
+ By combining these signals, the system creates a **“proof of presence”** before approving payouts.
+
+---
+
+## 2. The Data
+
+Beyond GPS, we analyze multiple data points to detect fraud (especially coordinated attacks):
+
+- **Motion Data (Accelerometer/Gyroscope)**  
+  → Checks if the phone is actually being used  
+
+- **Battery & Power State**  
+  → Real usage vs always charging setups  
+
+- **Network Information**  
+  → IP type, VPN/proxy detection, signal changes  
+
+- **Historical Behavior**  
+  → Normal routes vs sudden “teleporting”  
+
+- **Cluster Patterns**  
+  → Multiple users claiming from the same spot at the same time  
+
+- **Weather & AQI Data**  
+  → Verifies if conditions actually match the claim  
+
+This helps identify not just single frauds, but **fraud rings**.
+
+---
+
+## 3. The UX Balance
+
+We ensure fraud checks don’t hurt genuine users.
+
+###  Low Risk
+- Instant payout  
+- No interruption  
+
+---
+
+###  Medium Risk
+- Quick verification:
+  - Rotate phone  
+  - Short video check  
+
+ Takes a few seconds, minimal friction  
+
+---
+
+### High Risk
+- Sent for manual review  
+- Message shown: *“Verification in progress”*  
+
+ No instant rejection, avoids unfair penalties  
+ 
+---
