@@ -1,0 +1,24 @@
+@media (max-width: 768px) {
+  .container { padding: 0 24px; }
+  .navbar { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero-content { grid-template-columns: 1fr; gap: 40px; }
+  .hero-title { font-size: 36px; }
+  .hero-visual { display: none; }
+  .features-grid { grid-template-columns: 1fr; }
+  .plans-row { grid-template-columns: 1fr; }
+  .trust-row { grid-template-columns: repeat(2, 1fr); }
+  .steps-row { grid-template-columns: repeat(2, 1fr); }
+  .steps-row::before { display: none; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .plans-cards { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .quick-links { grid-template-columns: repeat(2, 1fr); }
+  .admin-grid { grid-template-columns: repeat(2, 1fr); }
+  .zone-heatmap { grid-template-columns: repeat(3, 1fr); }
+  .cta-section { padding: 48px 28px; }
+  .cta-section .section-title { font-size: 32px; }
+  .section-title { font-size: 32px; }
+  .section { padding: 64px 0; }
+}

@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenvest — Micro-Insurance for Gig Workers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="toast-container" id="toasts"></div>
+
+<div id="page-home" class="page active">
+
+  
+  <nav class="navbar" id="main-navbar">
+    <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      Zenvest
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#plans">Plans</a>
+      <a href="#how-it-works">How it works</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-ghost" onclick="navigate('auth')">Sign in</button>
+      <button class="btn btn-primary" onclick="navigate('register')">Get Protected →</button>
+    </div>
+  </nav>
+
+  
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div style="animation: fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) both;">
+          <h1 class="hero-title">
+            Insurance built for <span class="highlight">gig workers</span> on the go
+          </h1>
+          <p class="hero-subtitle">
+            Parametric micro-insurance for delivery workers. Auto-payouts when it rains, AI-powered risk scoring, and plans from ₹99/week. No paperwork. No wait.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" onclick="navigate('register')">
+              Start Free — Get Covered
+              <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <button class="btn btn-secondary btn-lg" onclick="viewDemoOnDashboard()">
+              View Demo Dashboard
+            </button>
+          </div>
+        </div>
+        <div class="hero-visual" style="animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s both;">
+          <div style="position:relative">
+            <div class="floating-card top-left">
+              <div class="fc-icon" style="background:#F0FDF4;">🌧</div>
+              <div>
+                <div style="font-size:11px;color:var(--text-muted)">Rain trigger</div>
+                <div style="color:var(--success)">+₹350 credited</div>
+              </div>
+            </div>
+            <div class="hero-phone-mockup">
+              <div class="phone-header">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="phone-avatar">R</div>
+                  <div class="phone-greeting">
+                    <div style="font-size:11px;color:var(--text-muted)">Good morning</div>
+                    <div class="name">Ravi Kumar</div>
+                  </div>
+                </div>
+                <div style="position:relative">
+                  <svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--text-secondary)" stroke-width="2" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                  <div style="position:absolute;top:-4px;right:-4px;width:10px;height:10px;border-radius:50%;background:var(--error);border:2px solid white;"></div>
+                </div>
+              </div>
+              <div class="policy-card-mini">
+                <div class="plan-name">Smart Shield</div>
+                <div class="coverage">₹1,00,000</div>
+                <div class="meta">
+                  <span>ACTIVE</span>
+                  <span>Renews Sunday</span>
+                </div>
+              </div>
+              <div class="mini-stats">
+                <div class="mini-stat"><div class="v">₹1,200</div><div class="l">Claims</div></div>
+                <div class="mini-stat"><div class="v">8 wks</div><div class="l">Active</div></div>
+                <div class="mini-stat"><div class="v">82</div><div class="l">Trust</div></div>
+              </div>
+            </div>
+            <div class="floating-card bottom-right">
+              <div class="fc-icon" style="background:var(--blue-light);">🛡</div>
+              <div>
+                <div style="font-size:11px;color:var(--text-muted)">Risk score</div>
+                <div style="color:var(--blue)">72 · High</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="features" style="background:white;">
+    <div class="container">
+      <div style="max-width:600px">
+        <div class="section-label">
+          <svg width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Why Zenvest
+        </div>
+        <h2 class="section-title">Insurance that actually works for you</h2>
+        <p class="section-subtitle">Built ground-up for India's 15 million gig delivery workers. Auto-payouts. No forms. No rejections.</p>
+      </div>
+      <div class="features-grid" id="features-grid">
+        <div class="feature-card animate-in animate-in-delay-1">
+          <div class="feature-icon blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="feature-title">Parametric Auto-Payouts</div>
+          <p class="feature-desc">Rain over 25mm, AQI above 300, temperature over 42°C — triggers auto-credit to your account. Zero claims process.</p>
+        </div>
+        <div class="feature-card animate-in animate-in-delay-2">
+          <div class="feature-icon purple">
+            <svg width="24" height="24" viewBox="0 0 24 24" stroke="var(--purple)" stroke-width="2" fill="none"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="feature-title">AI Risk Profiling</div>
+          <p class="feature-desc">Our model analyses your zone, shift timing, experience, and traffic patterns to calculate your personalised risk score.</p>
+        </div>
+        <div class="feature-card animate-in animate-in-delay-3">
+          <div class="feature-icon green">
+            <svg width="24" height="24" viewBox="0 0 24 24" stroke="var(--success)" stroke-width="2" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="feature-title">Aadhaar-Verified Trust Score</div>
+          <p class="feature-desc">Build your Trust Score over time. Higher trust = lower premiums, higher coverage limits, faster claims.</p>
+        </div>
+        <div class="feature-card animate-in animate-in-delay-4">
+          <div class="feature-icon amber">
+            <svg width="24" height="24" viewBox="0 0 24 24" stroke="var(--warning)" stroke-width="2" fill="none"><path d="M12 22V12m0 0L6 6m6 6l6-6"/><circle cx="12" cy="4" r="2"/><path d="M4 20h16"/></svg>
+          </div>
+          <div class="feature-title">Weekly Micro-Premiums</div>
+          <p class="feature-desc">Pay as little as ₹99/week — less than a coffee. Renew every Sunday. Cancel anytime. No lock-in period.</p>
+        </div>
+        <div class="feature-card animate-in animate-in-delay-5">
+          <div class="feature-icon red">
+            <svg width="24" height="24" viewBox="0 0 24 24" stroke="var(--error)" stroke-width="2" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="feature-title">Live Weather Monitoring</div>
+          <p class="feature-desc">Real-time tracking of AQI, rainfall, temperature, and wind across your delivery zone. 24/7 automated monitoring.</p>
+        </div>
+        <div class="feature-card animate-in animate-in-delay-6">
+          <div class="feature-icon blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="2" fill="none"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="feature-title">Instant Digital Claims</div>
+          <p class="feature-desc">Manual claims processed in under 4 hours. Upload photo proof, get approval on WhatsApp, money in 24h.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="plans">
+    <div class="container">
+      <div style="text-align:center;max-width:600px;margin:0 auto 60px">
+        <div class="section-label" style="justify-content:center">
+          <svg width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" fill="none"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Plans & Pricing
+        </div>
+        <h2 class="section-title">Simple, transparent pricing</h2>
+        <p class="section-subtitle" style="margin:0 auto">No hidden charges. No waiting periods. Pick a plan, get covered this Sunday.</p>
+      </div>
+      <div class="plans-row">
+        <div class="plan-preview-card" onclick="navigate('register')">
+          <div class="plan-name">STARTER</div>
+          <div class="plan-price">₹99</div>
+          <div class="plan-period">per week</div>
+          <div class="plan-coverage">Coverage: <strong>₹50,000</strong></div>
+          <ul class="plan-features">
+            <li>Accident cover</li>
+            <li>Basic hospitalisation</li>
+            <li>24/7 helpline</li>
+          </ul>
+          <button class="btn btn-secondary" style="width:100%">Get Started</button>
+        </div>
+        <div class="plan-preview-card featured" onclick="navigate('register')" style="padding-top:40px">
+          <div class="plan-badge-tag">⭐ Recommended</div>
+          <div class="plan-name">SMART</div>
+          <div class="plan-price">₹149</div>
+          <div class="plan-period">per week</div>
+          <div class="plan-coverage">Coverage: <strong>₹1,00,000</strong></div>
+          <ul class="plan-features">
+            <li>Everything in Starter</li>
+            <li>Parametric weather cover</li>
+            <li>Equipment cover</li>
+            <li>Rain auto-payout</li>
+          </ul>
+          <button class="btn btn-primary" style="width:100%">Get Started →</button>
+        </div>
+        <div class="plan-preview-card" onclick="navigate('register')">
+          <div class="plan-name">PRO</div>
+          <div class="plan-price">₹249</div>
+          <div class="plan-period">per week</div>
+          <div class="plan-coverage">Coverage: <strong>₹2,00,000</strong></div>
+          <ul class="plan-features">
+            <li>Everything in Smart</li>
+            <li>Critical illness cover</li>
+            <li>Income protection</li>
+            <li>Priority claims</li>
+          </ul>
+          <button class="btn btn-secondary" style="width:100%">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div style="text-align:center;max-width:600px;margin:0 auto 60px">
+        <div class="section-label" style="justify-content:center">How it works</div>
+        <h2 class="section-title">Get covered in under 5 minutes</h2>
+        <p class="section-subtitle" style="margin:0 auto">From registration to active policy — everything digital, no office visits needed.</p>
+      </div>
+      <div class="steps-row">
+        <div class="step-item active">
+          <div class="step-number">1</div>
+          <div class="step-title">Sign Up</div>
+          <p class="step-desc">Enter your mobile number and verify with OTP. Quick Aadhaar verification for identity proof.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-title">AI Profiling</div>
+          <p class="step-desc">Our engine analyses your work profile, zone risk, shift hours, and experience to compute your risk score.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-title">Pick a Plan</div>
+          <p class="step-desc">Choose from Starter, Smart, or Pro. Premium calculated transparently based on your risk profile.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-title">Stay Protected</div>
+          <p class="step-desc">Ride confidently. Auto-payouts activate on weather triggers. Claims settled in hours, not weeks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="container">
+      <div class="cta-section">
+        <div class="section-label">Ready to ride safe?</div>
+        <h2 class="section-title">Start your protection today</h2>
+        <p class="section-subtitle">Micro-insurance built for India's delivery workers. Coverage starts from just ₹99/week.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-lg" onclick="navigate('register')">
+            Get Protected — It's Free to Start →
+          </button>
+          <button class="btn btn-secondary btn-lg" onclick="viewDemoOnDashboard()">
+            View Demo
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="logo-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            Zenvest
+          </div>
+          <p>Micro-insurance built for India's gig economy workers. Parametric payouts, AI risk scoring, weekly premiums.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Product</div>
+          <div class="footer-links">
+            <a href="#">Features</a>
+            <a href="#">Plans</a>
+            <a href="#">How it works</a>
+            <a href="#">Triggers</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="#">About us</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Legal</div>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">IRDAI Registration</a>
+            <a href="#">Grievances</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Zenvest Insurance Broking Pvt. Ltd. · IRDAI Reg. No. 521 · CIN: U65990MH2024PTC123456</span>
+        <span>Made with ❤ for India's gig workers</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<div id="page-auth" class="page">
+
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="auth-container">
+    <div class="auth-logo">
+      <div class="nav-logo" style="justify-content:center; cursor:pointer" onclick="navigate('home')">
+        <div class="logo-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        Zenvest
+      </div>
+    </div>
+
+    <div class="auth-card" style="animation: fadeUp 0.5s cubic-bezier(0.16,1,0.3,1)">
+
+      <div style="margin-bottom:8px">
+        <h2 style="font-size:24px;font-weight:700;margin-bottom:6px">Welcome back</h2>
+        <p style="font-size:14px;color:var(--text-secondary)">Sign in to your account or create a new one</p>
+      </div>
+
+      <div class="auth-tabs" style="margin:24px 0">
+        <button class="auth-tab active" id="tab-signin" onclick="switchAuthTab('signin')">Sign in</button>
+        <button class="auth-tab" id="tab-register" onclick="navigate('register')">Register</button>
+      </div>
+
+      
+      <div style="margin-bottom:20px">
+        <div style="font-size:13px;font-weight:600;color:var(--text-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px">Continue as</div>
+        <div class="role-selector">
+          <div class="role-card selected" id="role-user" onclick="selectRole('user')">
+            <div class="role-icon">🛵</div>
+            <div class="role-name">Delivery Worker</div>
+            <div class="role-desc">Access your policy & payouts</div>
+          </div>
+          <div class="role-card" id="role-admin" onclick="selectRole('admin')">
+            <div class="role-icon">🏢</div>
+            <div class="role-name">Admin</div>
+            <div class="role-desc">Manage policies & analytics</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group" style="gap:16px">
+        <div class="input-group">
+          <label class="input-label">Phone Number</label>
+          <div class="phone-input-wrap">
+            <div class="phone-prefix">🇮🇳 +91</div>
+            <input class="phone-input-inner" type="tel" placeholder="98765 43210" maxlength="10" id="auth-phone">
+          </div>
+        </div>
+        <div class="input-group" id="password-group">
+          <label class="input-label">Password</label>
+          <div class="password-input-wrap">
+            <input class="input" type="password" placeholder="Enter your password" id="auth-password" style="padding-right:48px">
+            <button class="password-toggle" onclick="togglePwdVis('auth-password', this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:right;margin:12px 0 20px">
+        <a href="#" style="font-size:13px;color:var(--blue);font-weight:600">Forgot password?</a>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%;height:48px;font-size:15px" id="auth-submit-btn" onclick="handleAuth()">
+        Sign in →
+      </button>
+
+      <div class="auth-divider" style="margin:24px 0"><span>or continue with OTP</span></div>
+
+      <button class="btn btn-secondary" style="width:100%;height:46px" onclick="navigate('register')">
+        <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        New? Register with OTP
+      </button>
+
+      <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:20px">
+        By continuing you agree to our <a href="#" style="color:var(--blue)">Terms</a> and <a href="#" style="color:var(--blue)">Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="page-register" class="page">
+
+  
+  <div class="register-header">
+    <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      Zenvest
+    </div>
+    <button class="btn btn-ghost btn-sm" onclick="navigate('home')">✕ Exit</button>
+  </div>
+
+  
+  <div class="step-progress-bar" id="step-progress-bar">
+    <div class="step-labels">
+      <div class="step-label-item active" id="sl-1">1. Phone</div>
+      <div class="step-label-item" id="sl-2">2. Details</div>
+      <div class="step-label-item" id="sl-3">3. Aadhaar</div>
+      <div class="step-label-item" id="sl-4">4. Password</div>
+      <div class="step-label-item" id="sl-5">5. Review</div>
+    </div>
+    <div class="step-segments">
+      <div class="step-seg active" id="seg-1"></div>
+      <div class="step-seg" id="seg-2"></div>
+      <div class="step-seg" id="seg-3"></div>
+      <div class="step-seg" id="seg-4"></div>
+      <div class="step-seg" id="seg-5"></div>
+    </div>
+  </div>
+
+  <div class="register-body">
+
+    
+    <div class="step-pane active" id="step-1">
+      <h2 class="step-heading">Enter your mobile number</h2>
+      <p class="step-subheading">We'll send you a 6-digit OTP to verify your identity</p>
+      <div class="form-group">
+        <div class="input-group">
+          <label class="input-label">Mobile Number</label>
+          <div class="phone-input-wrap">
+            <div class="phone-prefix">🇮🇳 +91</div>
+            <input class="phone-input-inner" type="tel" placeholder="Enter 10-digit mobile number" maxlength="10" id="reg-phone" oninput="this.value=this.value.replace(/\D/g,'')">
+          </div>
+        </div>
+
+        <div id="otp-section" style="display:none">
+          <div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;text-align:center">
+            Enter the 6-digit OTP sent to +91 <span id="phone-display" style="font-weight:700;color:var(--text-primary)"></span>
+          </div>
+          <div class="otp-inputs" id="otp-inputs">
+            <input class="otp-box" type="text" maxlength="1" id="otp-0" oninput="otpInput(this,0)">
+            <input class="otp-box" type="text" maxlength="1" id="otp-1" oninput="otpInput(this,1)">
+            <input class="otp-box" type="text" maxlength="1" id="otp-2" oninput="otpInput(this,2)">
+            <input class="otp-box" type="text" maxlength="1" id="otp-3" oninput="otpInput(this,3)">
+            <input class="otp-box" type="text" maxlength="1" id="otp-4" oninput="otpInput(this,4)">
+            <input class="otp-box" type="text" maxlength="1" id="otp-5" oninput="otpInput(this,5)">
+          </div>
+          <div class="otp-timer" id="otp-timer">Resend in <strong id="countdown">0:60</strong></div>
+          <div class="otp-resend" id="otp-resend" style="display:none">
+            Didn't receive OTP? <a onclick="resendOTP()">Resend OTP</a>
+          </div>
+          <div id="otp-error" class="input-error-text" style="text-align:center;display:none;margin-top:8px">Invalid OTP. Please try again.</div>
+        </div>
+
+        <div id="send-otp-btn-wrap">
+          <button class="btn btn-primary" style="width:100%;height:48px" onclick="sendOTP()">Send OTP →</button>
+        </div>
+        <div id="verify-otp-btn-wrap" style="display:none">
+          <button class="btn btn-primary" style="width:100%;height:48px" onclick="verifyOTP()">Verify & Continue →</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="step-pane" id="step-2">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px">
+        <button class="btn btn-ghost btn-sm" onclick="goToStep(1)">← Back</button>
+        <div>
+          <h2 class="step-heading" style="margin-bottom:4px">Tell us about yourself</h2>
+          <p style="font-size:14px;color:var(--text-secondary)">Help us understand your work profile for accurate risk scoring</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <label class="input-label">Full Name</label>
+          <input class="input" type="text" placeholder="As per Aadhaar" id="reg-name">
+        </div>
+        <div class="input-group">
+          <label class="input-label">City</label>
+          <select class="input" id="reg-city">
+            <option value="">Select your city</option>
+            <option>Mumbai</option><option>Delhi</option><option>Bengaluru</option><option>Hyderabad</option><option>Chennai</option><option>Kolkata</option><option>Pune</option><option>Ahmedabad</option><option>Jaipur</option><option>Surat</option><option>Lucknow</option><option>Kanpur</option><option>Nagpur</option><option>Indore</option><option>Thane</option><option>Bhopal</option><option>Visakhapatnam</option><option>Patna</option><option>Vadodara</option><option>Ghaziabad</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Delivery Platform</label>
+          <div class="chips-wrap" id="platform-chips">
+            <div class="chip" onclick="toggleChip(this,'platform')" data-value="swiggy">Swiggy</div>
+            <div class="chip" onclick="toggleChip(this,'platform')" data-value="zomato">Zomato</div>
+            <div class="chip" onclick="toggleChip(this,'platform')" data-value="dunzo">Dunzo</div>
+            <div class="chip" onclick="toggleChip(this,'platform')" data-value="zepto">Zepto</div>
+            <div class="chip" onclick="toggleChip(this,'platform')" data-value="other">Other</div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Daily Work Hours — <span class="slider-value-label" id="hours-label" style="font-size:18px">8 hrs</span></label>
+          <input class="slider-input" type="range" min="2" max="16" value="8" id="hours-slider" oninput="document.getElementById('hours-label').textContent=this.value+' hrs'">
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);margin-top:6px"><span>2 hrs</span><span>16 hrs</span></div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Shift Timing</label>
+          <div class="chips-wrap" id="shift-chips">
+            <div class="chip" onclick="toggleChipSingle(this,'shift')" data-value="morning">🌅 Morning</div>
+            <div class="chip" onclick="toggleChipSingle(this,'shift')" data-value="evening">🌆 Evening</div>
+            <div class="chip" onclick="toggleChipSingle(this,'shift')" data-value="night">🌙 Night</div>
+            <div class="chip" onclick="toggleChipSingle(this,'shift')" data-value="flexible">🔄 Flexible</div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Experience</label>
+          <div class="chips-wrap" id="exp-chips">
+            <div class="chip" onclick="toggleChipSingle(this,'exp')" data-value="<6m">Under 6 months</div>
+            <div class="chip" onclick="toggleChipSingle(this,'exp')" data-value="6-12m">6–12 months</div>
+            <div class="chip" onclick="toggleChipSingle(this,'exp')" data-value="1-2y">1–2 years</div>
+            <div class="chip" onclick="toggleChipSingle(this,'exp')" data-value="2y+">2+ years</div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Average Weekly Earnings</label>
+          <div class="phone-input-wrap">
+            <div class="phone-prefix">₹</div>
+            <input class="phone-input-inner" type="number" placeholder="e.g. 5000" id="reg-earnings">
+          </div>
+        </div>
+        <button class="btn btn-primary" style="width:100%;height:48px" onclick="goToStep(3)">Continue →</button>
+      </div>
+    </div>
+
+    
+    <div class="step-pane" id="step-3">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px">
+        <button class="btn btn-ghost btn-sm" onclick="goToStep(2)">← Back</button>
+        <div>
+          <h2 class="step-heading" style="margin-bottom:4px">Verify your identity</h2>
+          <p style="font-size:14px;color:var(--text-secondary)">Upload your Aadhaar card for KYC verification</p>
+        </div>
+      </div>
+      <div class="upload-zones-row" style="margin-bottom:24px">
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text-muted)">FRONT SIDE</div>
+          <input type="file" id="file-front" accept="image/*" capture="environment" style="display:none" onchange="handleAadhaarUpload(this,'front')">
+          <div class="upload-zone" id="upload-front" onclick="document.getElementById('file-front').click()" style="cursor:pointer">
+            <div id="front-preview-wrap" style="display:none;margin-bottom:12px">
+              <img id="front-preview-img" src="" alt="Front preview" style="max-width:100%;max-height:140px;border-radius:8px;object-fit:contain;border:1px solid var(--border)">
+            </div>
+            <div class="upload-icon" id="front-icon">📷</div>
+            <div class="upload-label" id="front-label">Upload Aadhaar Front</div>
+            <div class="upload-hint" id="front-hint">Tap to take photo or choose from gallery</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text-muted)">BACK SIDE</div>
+          <input type="file" id="file-back" accept="image/*" capture="environment" style="display:none" onchange="handleAadhaarUpload(this,'back')">
+          <div class="upload-zone" id="upload-back" onclick="document.getElementById('file-back').click()" style="cursor:pointer">
+            <div id="back-preview-wrap" style="display:none;margin-bottom:12px">
+              <img id="back-preview-img" src="" alt="Back preview" style="max-width:100%;max-height:140px;border-radius:8px;object-fit:contain;border:1px solid var(--border)">
+            </div>
+            <div class="upload-icon" id="back-icon">📷</div>
+            <div class="upload-label" id="back-label">Upload Aadhaar Back</div>
+            <div class="upload-hint" id="back-hint">Tap to take photo or choose from gallery</div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="width:100%;height:48px" id="verify-docs-btn" disabled onclick="verifyDocuments()">
+        <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="margin-right:4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Verify Documents
+      </button>
+
+      
+      <div id="aadhaar-verified" style="display:none;margin-top:20px">
+        <div class="card" style="border-color:var(--success);background:var(--success-light)">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
+            <div style="width:44px;height:44px;border-radius:50%;background:var(--success);display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div style="font-size:16px;font-weight:700;color:#166534">Aadhaar Verified</div>
+              <div style="font-size:13px;color:#15803D">Identity confirmed successfully</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <div style="font-size:11px;color:#15803D;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Name</div>
+              <div style="font-size:15px;font-weight:600;color:#166534" id="aadhaar-name-display">—</div>
+            </div>
+            <div>
+              <div style="font-size:11px;color:#15803D;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Date of Birth</div>
+              <div style="font-size:15px;font-weight:600;color:#166534">12 Mar 1994</div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary" style="width:100%;height:48px;margin-top:16px" onclick="goToStep(4)">Continue →</button>
+      </div>
+    </div>
+
+    
+    <div class="step-pane" id="step-4">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px">
+        <button class="btn btn-ghost btn-sm" onclick="goToStep(3)">← Back</button>
+        <div>
+          <h2 class="step-heading" style="margin-bottom:4px">Create your password</h2>
+          <p style="font-size:14px;color:var(--text-secondary)">Choose a strong password to secure your account</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <label class="input-label">Password</label>
+          <div class="password-input-wrap">
+            <input class="input" type="password" placeholder="At least 8 characters" id="reg-password" oninput="checkPasswordStrength(this.value)" style="padding-right:48px">
+            <button class="password-toggle" onclick="togglePwdVis('reg-password', this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="strength-bar" id="strength-bar" style="display:none">
+            <div class="strength-segments">
+              <div class="strength-seg" id="str-1"></div>
+              <div class="strength-seg" id="str-2"></div>
+              <div class="strength-seg" id="str-3"></div>
+              <div class="strength-seg" id="str-4"></div>
+            </div>
+            <div class="strength-label" id="strength-label"></div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Confirm Password</label>
+          <div class="password-input-wrap">
+            <input class="input" type="password" placeholder="Re-enter password" id="reg-confirm" style="padding-right:48px">
+            <button class="password-toggle" onclick="togglePwdVis('reg-confirm', this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer">
+          <input type="checkbox" id="terms-check" style="margin-top:3px;width:16px;height:16px;flex-shrink:0">
+          <span style="font-size:14px;color:var(--text-secondary)">I agree to the <a href="#" style="color:var(--blue)">Terms of Service</a> and <a href="#" style="color:var(--blue)">Privacy Policy</a></span>
+        </label>
+        <button class="btn btn-primary" style="width:100%;height:48px" onclick="goToStep(5)">Create Account →</button>
+      </div>
+    </div>
+
+    
+    <div class="step-pane" id="step-5">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px">
+        <button class="btn btn-ghost btn-sm" onclick="goToStep(4)">← Back</button>
+        <div>
+          <h2 class="step-heading" style="margin-bottom:4px">You're almost there! 🎉</h2>
+          <p style="font-size:14px;color:var(--text-secondary)">Review your details before we create your account</p>
+        </div>
+      </div>
+      <div class="form-group" style="gap:16px">
+        <div class="card card-sm" style="padding:20px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+            <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">Personal Details</div>
+            <button class="btn btn-ghost btn-sm" onclick="goToStep(1)" style="font-size:12px;color:var(--blue)">Edit</button>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div><div style="font-size:11px;color:var(--text-muted)">Name</div><div style="font-size:14px;font-weight:600" id="summary-name">—</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted)">Phone</div><div style="font-size:14px;font-weight:600" id="summary-phone">—</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted)">City</div><div style="font-size:14px;font-weight:600" id="summary-city">—</div></div>
+          </div>
+        </div>
+        <div class="card card-sm" style="padding:20px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+            <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">Work Profile</div>
+            <button class="btn btn-ghost btn-sm" onclick="goToStep(2)" style="font-size:12px;color:var(--blue)">Edit</button>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div><div style="font-size:11px;color:var(--text-muted)">Platform</div><div style="font-size:14px;font-weight:600" id="summary-platform">—</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted)">Hours/Day</div><div style="font-size:14px;font-weight:600" id="summary-hours">—</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted)">Shift</div><div style="font-size:14px;font-weight:600" id="summary-shift">—</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted)">Experience</div><div style="font-size:14px;font-weight:600" id="summary-exp">—</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted)">Weekly Earnings</div><div style="font-size:14px;font-weight:600" id="summary-earnings">—</div></div>
+          </div>
+        </div>
+        <div class="card card-sm" style="padding:20px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+            <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">Documents & Account</div>
+            <button class="btn btn-ghost btn-sm" onclick="goToStep(3)" style="font-size:12px;color:var(--blue)">Edit</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:14px">Aadhaar Card</span>
+              <span class="badge badge-success">Verified</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:14px">Password</span>
+              <span class="badge badge-success">Set</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg" style="width:100%" onclick="completeRegistration()">
+          Confirm & Continue →
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div class="verify-overlay" id="verify-overlay" style="display:none">
+    <div class="verify-card">
+      <div class="spinner"></div>
+      <div class="verify-text" id="verify-text">Scanning document...</div>
+      <div class="verify-sub" id="verify-sub">Please wait while we verify your Aadhaar</div>
+    </div>
+  </div>
+
+</div>
+
+<div id="page-risk" class="page">
+
+  <div class="register-header">
+    <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      Zenvest
+    </div>
+    <span class="badge badge-info">AI Analysis</span>
+  </div>
+
+  
+  <div class="risk-loading" id="risk-loading">
+    <div class="risk-logo-pulse">
+      <svg width="36" height="36" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <h2 style="font-size:24px;font-weight:700;margin-bottom:10px">Analysing your profile</h2>
+    <p style="color:var(--text-secondary);font-size:16px" id="risk-loading-text">Analysing your zone...</p>
+    <div class="loading-dots">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+  </div>
+
+  
+  <div class="risk-result" id="risk-result" style="display:none;animation:fadeUp 0.6s cubic-bezier(0.16,1,0.3,1)">
+    <div class="risk-gauge-wrap">
+      <svg class="gauge-svg" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#E2E8F0" stroke-width="12"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="#DC2626" stroke-width="12"
+          stroke-linecap="round"
+          stroke-dasharray="502"
+          stroke-dashoffset="126"
+          transform="rotate(-90 100 100)"
+          id="gauge-circle"
+          style="transition: stroke-dashoffset 1.5s cubic-bezier(0.16,1,0.3,1)"/>
+        <text x="100" y="95" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="44" font-weight="700" fill="#0F172A" id="risk-score-number">—</text>
+        <text x="100" y="118" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="13" fill="#64748B" id="risk-score-label">Analysing</text>
+      </svg>
+      <div style="display:flex;justify-content:center;gap:12px;margin-top:4px" id="risk-badge-wrap">
+        <span class="badge badge-warning" id="risk-level-badge">ANALYSING...</span>
+      </div>
+      <p style="font-size:14px;color:var(--text-secondary);text-align:center;margin-top:12px;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.7" id="risk-description-text">
+        Calculating your personalised risk score...
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom:24px">
+      <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:20px">Risk Breakdown</div>
+      <div class="risk-breakdown" id="risk-breakdown">
+        <div class="risk-bar-item">
+          <div class="risk-bar-header">
+            <span class="risk-bar-name" data-idx="0">Zone Risk</span>
+            <span class="risk-bar-pct" data-idx="0" style="color:var(--error)">—</span>
+          </div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-pct="50" data-idx="0" style="width:0%;background:var(--error)"></div></div>
+        </div>
+        <div class="risk-bar-item">
+          <div class="risk-bar-header">
+            <span class="risk-bar-name" data-idx="1">Work Hours</span>
+            <span class="risk-bar-pct" data-idx="1" style="color:var(--warning)">—</span>
+          </div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-pct="50" data-idx="1" style="width:0%;background:var(--warning)"></div></div>
+        </div>
+        <div class="risk-bar-item">
+          <div class="risk-bar-header">
+            <span class="risk-bar-name" data-idx="2">Experience Level</span>
+            <span class="risk-bar-pct" data-idx="2" style="color:var(--success)">—</span>
+          </div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-pct="50" data-idx="2" style="width:0%;background:var(--success)"></div></div>
+        </div>
+        <div class="risk-bar-item">
+          <div class="risk-bar-header">
+            <span class="risk-bar-name" data-idx="3">Weather Exposure</span>
+            <span class="risk-bar-pct" data-idx="3" style="color:var(--warning)">—</span>
+          </div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-pct="50" data-idx="3" style="width:0%;background:var(--warning)"></div></div>
+        </div>
+        <div class="risk-bar-item">
+          <div class="risk-bar-header">
+            <span class="risk-bar-name" data-idx="4">Trust Score</span>
+            <span class="risk-bar-pct" data-idx="4" style="color:var(--success)">—</span>
+          </div>
+          <div class="risk-bar-track"><div class="risk-bar-fill" data-pct="70" data-idx="4" style="width:0%;background:var(--success)"></div></div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="risk-ai-summary-wrap" style="background:var(--blue-light);border:1px solid #BFDBFE;border-radius:var(--radius-md);padding:14px 18px;margin-bottom:24px;font-size:14px;color:var(--blue-dark);display:flex;gap:10px;align-items:flex-start">
+      <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" style="flex-shrink:0;margin-top:2px"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4m0 4h.01"/></svg>
+      <span id="risk-ai-summary">Analysing your profile with AI...</span>
+    </div>
+
+    <div style="margin-bottom:32px">
+      <div style="font-size:14px;font-weight:600;margin-bottom:10px">Personalised suggestions</div>
+      <div class="suggestion-chips" id="risk-suggestions">
+        <div class="suggestion-chip">Analysing...</div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-lg" style="width:100%" onclick="navigate('plans')">
+      See My Recommended Plan →
+    </button>
+  </div>
+
+</div>
+
+<div id="page-plans" class="page">
+
+  <div class="register-header">
+    <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      Zenvest
+    </div>
+    <button class="btn btn-ghost btn-sm" onclick="navigate('risk')">← Back</button>
+  </div>
+
+  <div class="plans-content">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="section-label" style="justify-content:center;margin-bottom:12px">Step 3 of 3</div>
+      <h2 style="font-size:32px;font-weight:700;letter-spacing:-0.5px;margin-bottom:8px">Choose your coverage</h2>
+      <p style="color:var(--text-secondary);font-size:16px">Personalised plans based on your risk score — <span id="plan-risk-tagline">complete your profile first</span></p>
+    </div>
+
+    <div class="plans-cards" id="plan-cards">
+      
+      <div class="plan-card" id="pc-starter" onclick="selectPlan('starter')">
+        <div class="plan-check">
+          <svg viewBox="0 0 24 24" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="plan-name">STARTER</div>
+        <div class="plan-price">₹99</div>
+        <div class="plan-period">per week</div>
+        <div class="plan-coverage">Coverage: <strong>₹50,000</strong></div>
+        <ul class="plan-features">
+          <li>Accident cover</li>
+          <li>Basic hospitalisation</li>
+          <li>24/7 helpline</li>
+        </ul>
+      </div>
+
+      
+      <div class="plan-card selected" id="pc-smart" onclick="selectPlan('smart')" style="padding-top:40px">
+        <div class="plan-recommended-badge">⭐ Recommended for you</div>
+        <div class="plan-check">
+          <svg viewBox="0 0 24 24" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="plan-name">SMART</div>
+        <div class="plan-price">₹149</div>
+        <div class="plan-period">per week</div>
+        <div class="plan-coverage">Coverage: <strong>₹1,00,000</strong></div>
+        <ul class="plan-features">
+          <li>Everything in Starter</li>
+          <li>Parametric weather cover</li>
+          <li>Equipment cover (₹10,000)</li>
+          <li>Rain auto-payout</li>
+          <li>AQI trigger protection</li>
+        </ul>
+      </div>
+
+      
+      <div class="plan-card" id="pc-pro" onclick="selectPlan('pro')">
+        <div class="plan-check">
+          <svg viewBox="0 0 24 24" stroke-width="3" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div style="position:absolute;top:16px;right:52px">
+          <span class="badge badge-purple" style="font-size:10px">BEST VALUE</span>
+        </div>
+        <div class="plan-name">PRO</div>
+        <div class="plan-price">₹249</div>
+        <div class="plan-period">per week</div>
+        <div class="plan-coverage">Coverage: <strong>₹2,00,000</strong></div>
+        <ul class="plan-features">
+          <li>Everything in Smart</li>
+          <li>Critical illness cover</li>
+          <li>Income protection (14 days)</li>
+          <li>Priority claims (2h)</li>
+          <li>Family accident cover</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="premium-breakdown" id="premium-breakdown">
+      <div style="font-size:16px;font-weight:700;margin-bottom:20px">Premium Breakdown — <span id="breakdown-plan-name">Smart Shield</span></div>
+      <div class="premium-row">
+        <span class="label">Base premium</span>
+        <span class="value" id="base-premium">₹149</span>
+      </div>
+      <div class="premium-row">
+        <span class="label">
+          <svg width="14" height="14" viewBox="0 0 24 24" stroke="var(--warning)" stroke-width="2" fill="none" style="margin-right:4px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+          Zone risk adjustment (+15%)
+        </span>
+        <span class="value" id="zone-adj">+₹22</span>
+      </div>
+      <div class="premium-row">
+        <span class="label">
+          <svg width="14" height="14" viewBox="0 0 24 24" stroke="var(--text-muted)" stroke-width="2" fill="none" style="margin-right:4px"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Night shift surcharge (+8%)
+        </span>
+        <span class="value" id="night-adj">+₹12</span>
+      </div>
+      <div class="premium-row">
+        <span class="label">
+          <svg width="14" height="14" viewBox="0 0 24 24" stroke="var(--success)" stroke-width="2" fill="none" style="margin-right:4px"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Loyalty discount (–0%)
+        </span>
+        <span class="value" style="color:var(--success)">–₹0</span>
+      </div>
+      <div class="premium-row premium-total">
+        <span class="label">Final weekly premium</span>
+        <span class="value" id="final-premium">₹183</span>
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-lg" style="width:100%;margin-top:24px" onclick="confirmPlan()">
+      Continue with <span id="cta-plan-name">Smart Shield</span> →
+    </button>
+  </div>
+</div>
+
+<div id="page-dashboard" class="page">
+
+  
+  <div class="app-header">
+    <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer">
+      <div class="logo-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      Zenvest
+    </div>
+    <nav class="app-nav">
+      <div class="app-nav-item active" onclick="switchTab('home')">
+        <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </div>
+      <div class="app-nav-item" onclick="switchTab('triggers');navigate('triggers')">
+        <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        Triggers
+      </div>
+      <div class="app-nav-item" onclick="switchTab('claims');navigate('claims')">
+        <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Claims
+      </div>
+      <div class="app-nav-item" onclick="switchTab('profile');navigate('profile')">
+        <svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile
+      </div>
+    </nav>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div style="position:relative;cursor:pointer">
+        <svg width="22" height="22" viewBox="0 0 24 24" stroke="var(--text-secondary)" stroke-width="2" fill="none"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <div style="position:absolute;top:-3px;right:-3px;width:10px;height:10px;border-radius:50%;background:var(--error);border:2px solid white;"></div>
+      </div>
+      <div class="phone-avatar" style="width:36px;height:36px;font-size:14px;cursor:pointer" onclick="navigate('profile')" id="dash-avatar">?</div>
+    </div>
+  </div>
+
+  <div class="dashboard-content">
+
+    
+    <div style="margin-bottom:28px;animation:fadeUp 0.4s both">
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:4px">
+        <svg width="14" height="14" viewBox="0 0 24 24" stroke="var(--warning)" stroke-width="2" fill="none" style="margin-right:4px;vertical-align:middle"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <span id="dash-greeting-time">Good morning</span>
+      </div>
+      <h1 style="font-size:28px;font-weight:700;letter-spacing:-0.5px" id="dash-greeting-name">Welcome 👋</h1>
+    </div>
+
+    
+    <div id="dash-no-policy" class="animate-in" style="margin-bottom:28px">
+      <div style="background:linear-gradient(135deg,#1E3A8A,#1E1B4B);border-radius:var(--radius-xl);padding:40px 32px;color:white;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,0.04)"></div>
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px">🛡</div>
+        <div style="font-size:20px;font-weight:700;margin-bottom:8px">No active policy yet</div>
+        <div style="font-size:14px;opacity:0.75;margin-bottom:28px;max-width:340px;margin-left:auto;margin-right:auto;line-height:1.6">Complete your risk profile and choose a plan to activate your income protection.</div>
+        <button class="btn" style="background:white;color:#1E3A8A;font-weight:700;height:48px;padding:0 28px;border-radius:12px;font-size:15px" onclick="navigate('register')">
+          Get Protected →
+        </button>
+      </div>
+    </div>
+
+    
+    <div id="dash-active-policy" style="display:none;margin-bottom:24px">
+      <div class="policy-card-big">
+        <div class="policy-card-top">
+          <div>
+            <div class="policy-plan-name" id="dash-plan-name">Smart Shield</div>
+            <div class="policy-coverage-amount" id="dash-coverage-amount">₹1,00,000</div>
+          </div>
+          <div class="policy-status-badge">ACTIVE</div>
+        </div>
+        <div class="policy-card-bottom">
+          <div class="policy-meta">
+            <div class="meta-label">Weekly Premium</div>
+            <div class="meta-value" id="dash-premium-val">—</div>
+          </div>
+          <div class="policy-meta">
+            <div class="meta-label">Renews</div>
+            <div class="meta-value" id="dash-renew-date">—</div>
+          </div>
+          <div class="policy-meta">
+            <div class="meta-label">Zone</div>
+            <div class="meta-value" id="dash-city-val">—</div>
+          </div>
+          <div class="policy-meta">
+            <div class="meta-label">Policy ID</div>
+            <div class="meta-value" id="dash-policy-id" style="font-family:var(--font-mono);font-size:12px">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="dashboard-section animate-in animate-in-delay-1">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+        <div class="dashboard-section-title" style="margin-bottom:0">Your Stats</div>
+        <span style="font-size:12px;color:var(--text-muted);background:var(--bg);padding:4px 10px;border-radius:99px;border:1px solid var(--border)">Awaiting data</span>
+      </div>
+      <div class="stats-grid" id="dash-stats-section">
+        <div class="stat-card" style="opacity:0.6;pointer-events:none">
+          <div class="stat-icon" style="background:var(--success-light)">
+            <svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--success)" stroke-width="2" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="stat-label">Total Claims Received</div>
+          <div class="stat-value" style="color:var(--text-muted)" id="stat-claims-val">—</div>
+          <div class="stat-change" style="color:var(--text-muted)" id="stat-claims-change">No claims yet</div>
+        </div>
+        <div class="stat-card" style="opacity:0.6;pointer-events:none">
+          <div class="stat-icon" style="background:var(--blue-light)">
+            <svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="stat-label">Weeks Active</div>
+          <div class="stat-value" style="color:var(--text-muted)" id="stat-weeks-val">—</div>
+          <div class="stat-change" style="color:var(--text-muted)">Not started</div>
+        </div>
+        <div class="stat-card" style="opacity:0.6;pointer-events:none">
+          <div class="stat-icon" style="background:var(--purple-light)">
+            <svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--purple)" stroke-width="2" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div class="stat-label">Trust Score</div>
+          <div class="stat-value" style="color:var(--text-muted)" id="stat-trust-val">—</div>
+          <div class="stat-change" style="color:var(--text-muted)">Complete profile first</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="dashboard-section animate-in animate-in-delay-2">
+      <div class="dashboard-section-title">Quick Actions</div>
+      <div class="quick-links">
+        <div class="quick-link" onclick="navigate('triggers')">
+          <div class="ql-icon" style="background:#EFF6FF;">
+            <svg width="22" height="22" viewBox="0 0 24 24" stroke="var(--blue)" stroke-width="2" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="ql-label">Triggers</div>
+        </div>
+        <div class="quick-link" onclick="navigate('claims')">
+          <div class="ql-icon" style="background:var(--success-light);">
+            <svg width="22" height="22" viewBox="0 0 24 24" stroke="var(--success)" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="ql-label">Claims</div>
+        </div>
+        <div class="quick-link" onclick="navigate('profile')">
+          <div class="ql-icon" style="background:var(--purple-light);">
+            <svg width="22" height="22" viewBox="0 0 24 24" stroke="var(--purple)" stroke-width="2" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div class="ql-label">Profile</div>
+        </div>
+        <div class="quick-link" onclick="showToast('Help centre opening soon...','info')">
+          <div class="ql-icon" style="background:var(--warning-light);">
+            <svg width="22" height="22" viewBox="0 0 24 24" stroke="var(--warning)" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="ql-label">Help</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="dashboard-section animate-in animate-in-delay-3" id="dash-activity-feed">
+      <div class="dashboard-section-title">Recent Activity</div>
+      <div id="dash-activity-empty" class="card" style="padding:48px 28px;text-align:center">
+        <div style="width:56px;height:56px;border-radius:16px;background:var(--bg);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px">📋</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:6px;color:var(--text-primary)">No activity yet</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:24px;max-width:280px;margin-left:auto;margin-right:auto;line-height:1.6">Your policy activity, payouts, and claims will appear here once you get started.</div>
+        <button class="btn btn-primary" onclick="navigate('register')" style="height:44px;padding:0 24px">
+          Set up your policy →
+        </button>
+      </div>
+      <div id="dash-activity-list" class="card" style="padding:0 24px;display:none"></div>
+    </div>
+
+  </div>
+</div>
+
+<div id="page-triggers" class="page" style="background:var(--bg);">
+  <div class="app-header">
+    <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer">
+      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      Zenvest
+    </div>
+    <button class="btn btn-ghost" onclick="navigate('dashboard')">← Dashboard</button>
+  </div>
+  <div style="padding-top:68px">
+    <div style="max-width:700px;margin:0 auto;padding:36px 24px">
+      
+      <div class="card" style="background:linear-gradient(135deg,#1E3A8A,#1E1B4B);color:white;margin-bottom:28px;text-align:center;padding:40px">
+        <div style="font-size:48px;margin-bottom:16px">🌧</div>
+        <h2 style="font-size:24px;font-weight:700;margin-bottom:8px">Weather-based auto payouts</h2>
+        <p style="opacity:0.8;font-size:15px">When thresholds are breached, money hits your account automatically. No forms. No waiting.</p>
+      </div>
+
+      
+      <div id="triggers-no-plan" style="display:none;text-align:center;padding:60px 20px">
+        <div style="font-size:48px;margin-bottom:16px">🛡</div>
+        <div style="font-size:20px;font-weight:700;margin-bottom:8px">No active policy</div>
+        <div style="color:var(--text-secondary);margin-bottom:24px;font-size:14px">Get a policy first to see your triggers and auto-payouts.</div>
+        <button class="btn btn-primary" onclick="navigate('register')">Get Protected →</button>
+      </div>
+      <div id="triggers-content">
+        
+        <div id="last-payout-banner" class="card" style="background:var(--success-light);border-color:#BBF7D0;margin-bottom:24px;display:none;align-items:center;gap:16px">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--success);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="22" height="22" viewBox="0 0 24 24" stroke="white" stroke-width="2.5" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:#166534" id="last-payout-title">Last payout received</div>
+            <div style="font-size:13px;color:#15803D" id="last-payout-desc">Automatic parametric payout</div>
+          </div>
+        </div>
+        <div id="no-payout-banner" class="card" style="background:var(--blue-light);border-color:#BFDBFE;margin-bottom:24px;display:flex;align-items:center;gap:16px">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="22" height="22" viewBox="0 0 24 24" stroke="white" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:#1D4ED8">Monitoring your zone</div>
+            <div style="font-size:13px;color:#2563EB">No payouts yet — we check triggers every 15 minutes</div>
+          </div>
+        </div>
+
+      
+      <div class="dashboard-section-title">Active Triggers</div>
+
+      <div class="trigger-card">
+        <div class="trigger-icon-wrap" style="background:#DBEAFE;font-size:28px">🌧</div>
+        <div class="trigger-info">
+          <div class="trigger-name">Rainfall Trigger</div>
+          <div class="trigger-condition">Activates when rainfall &gt; 25mm in your zone</div>
+          <div class="trigger-payout">Payout: ₹350 per trigger</div>
+        </div>
+        <div style="text-align:right">
+          <span class="badge badge-success">TRIGGERED</span>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:6px">2 days ago</div>
+        </div>
+      </div>
+
+      <div class="trigger-card">
+        <div class="trigger-icon-wrap" style="background:#FEF3C7;font-size:28px">🌫</div>
+        <div class="trigger-info">
+          <div class="trigger-name">AQI Trigger</div>
+          <div class="trigger-condition">Activates when AQI &gt; 300 in your zone</div>
+          <div class="trigger-payout">Payout: ₹250 per trigger</div>
+        </div>
+        <div style="text-align:right">
+          <span class="badge badge-warning">MONITORING</span>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:6px">AQI: 187 now</div>
+        </div>
+      </div>
+
+      <div class="trigger-card">
+        <div class="trigger-icon-wrap" style="background:var(--error-light);font-size:28px">🌡</div>
+        <div class="trigger-info">
+          <div class="trigger-name">Heat Trigger</div>
+          <div class="trigger-condition">Activates when temperature &gt; 42°C</div>
+          <div class="trigger-payout">Payout: ₹200 per trigger</div>
+        </div>
+        <div style="text-align:right">
+          <span class="badge badge-default">INACTIVE</span>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:6px">Current: 35°C</div>
+        </div>
+      </div>
+
+      <div class="trigger-card">
+        <div class="trigger-icon-wrap" style="background:#F1F5F9;font-size:28px">💨</div>
+        <div class="trigger-info">
+          <div class="trigger-name">Wind Trigger</div>
+          <div class="trigger-condition">Activates when wind speed &gt; 60 km/h</div>
+          <div class="trigger-payout">Payout: ₹300 per trigger</div>
+        </div>
+        <div style="text-align:right">
+          <span class="badge badge-default">INACTIVE</span>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:6px">Current: 18 km/h</div>
+        </div>
+      </div>
+
+      
+      <div style="margin-top:32px" id="triggers-payout-history" style="display:none">
+        <div class="dashboard-section-title">Recent Parametric Payouts</div>
+        <div class="card" style="padding:0 24px" id="triggers-payout-list"></div>
+      </div>
+      <div id="triggers-payout-empty" style="display:none;margin-top:32px;text-align:center;padding:40px 20px;background:white;border-radius:var(--radius-lg);border:1px solid var(--border)">
+        <div style="font-size:40px;margin-bottom:12px">☀️</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:6px">No parametric payouts yet</div>
+        <div style="font-size:13px;color:var(--text-muted)">Payouts are triggered automatically when weather thresholds are breached in your zone.</div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="page-claims" class="page" style="background:var(--bg);">
+  <div class="app-header">
+    <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer">
+      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      Zenvest
+    </div>
+    <button class="btn btn-ghost" onclick="navigate('dashboard')">← Dashboard</button>
+  </div>
+  <div style="padding-top:68px">
+    <div style="max-width:700px;margin:0 auto;padding:36px 24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <h2 style="font-size:28px;font-weight:700">Claims & Payouts</h2>
+        <button class="btn btn-primary btn-sm" onclick="openManualClaimModal()" id="file-claim-btn">+ File a Claim</button>
+      </div>
+      <p style="color:var(--text-secondary);margin-bottom:28px">Your complete claims history</p>
+
+      
+      <div id="claims-no-plan" style="display:none;text-align:center;padding:60px 20px;background:white;border-radius:var(--radius-lg);border:1px solid var(--border)">
+        <div style="font-size:48px;margin-bottom:16px">🛡</div>
+        <div style="font-size:20px;font-weight:700;margin-bottom:8px">No active policy</div>
+        <div style="color:var(--text-secondary);margin-bottom:24px;font-size:14px">You need an active policy to file claims or receive parametric payouts.</div>
+        <button class="btn btn-primary" onclick="navigate('register')">Get Protected →</button>
+      </div>
+
+      <div id="claims-content">
+        
+        <div class="card" style="background:linear-gradient(135deg,var(--blue),var(--purple));color:white;margin-bottom:28px;display:flex;gap:32px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:12px;opacity:0.8;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px">Total received</div>
+            <div style="font-size:36px;font-weight:700;letter-spacing:-1px" id="claims-total-amount">₹0</div>
+          </div>
+          <div>
+            <div style="font-size:12px;opacity:0.8;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px">Payouts</div>
+            <div style="font-size:36px;font-weight:700;letter-spacing:-1px" id="claims-payout-count">0</div>
+          </div>
+          <div>
+            <div style="font-size:12px;opacity:0.8;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px">Manual claims</div>
+            <div style="font-size:36px;font-weight:700;letter-spacing:-1px" id="claims-manual-count">0</div>
+          </div>
+        </div>
+
+        
+        <div class="filter-tabs">
+          <div class="filter-tab active" onclick="filterClaims('all',this)">All</div>
+          <div class="filter-tab" onclick="filterClaims('parametric',this)">Parametric</div>
+          <div class="filter-tab" onclick="filterClaims('manual',this)">Manual</div>
+        </div>
+
+        
+        <div class="card" style="padding:0 24px;min-height:80px" id="claims-list-items"></div>
+        <div id="claims-empty-state" style="text-align:center;padding:60px 20px;background:white;border-radius:var(--radius-lg);border:1px solid var(--border);margin-top:8px;display:none"></div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div id="manual-claim-modal" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px">
+    <div style="background:white;border-radius:var(--radius-xl);padding:36px;max-width:480px;width:100%;box-shadow:var(--shadow-xl)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px">
+        <div style="font-size:20px;font-weight:700">File a Manual Claim</div>
+        <button onclick="closeManualClaimModal()" style="width:32px;height:32px;border-radius:50%;background:var(--bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px">✕</button>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div class="input-group">
+          <label class="input-label">Claim Type</label>
+          <select class="input" id="manual-claim-type">
+            <option value="Accident">🚗 Road Accident</option>
+            <option value="Hospitalisation">🏥 Hospitalisation</option>
+            <option value="Equipment Damage">🛵 Equipment / Vehicle Damage</option>
+            <option value="Income Loss">💸 Income Loss</option>
+            <option value="Other">📋 Other</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Description</label>
+          <textarea class="input" id="manual-claim-desc" rows="3" placeholder="Briefly describe the incident..." style="height:auto;padding:12px 16px;resize:none"></textarea>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Claim Amount (₹)</label>
+          <input class="input" type="number" id="manual-claim-amount" placeholder="e.g. 5000" min="100">
+        </div>
+        <div style="background:var(--warning-light);border:1px solid #FDE68A;border-radius:var(--radius-md);padding:14px;font-size:13px;color:#92400E">
+          ⚡ Claims are reviewed within 4 hours. Keep supporting documents (photos, bills) ready.
+        </div>
+        <button class="btn btn-primary" style="width:100%;height:48px" onclick="submitManualClaim()">Submit Claim →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="page-profile" class="page" style="background:var(--bg);">
+  <div class="app-header">
+    <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer">
+      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      Zenvest
+    </div>
+    <button class="btn btn-ghost" onclick="navigate('dashboard')">← Dashboard</button>
+  </div>
+  <div style="padding-top:68px">
+    <div style="max-width:700px;margin:0 auto;padding:36px 24px">
+
+      
+      <div class="card" style="margin-bottom:20px">
+        <div class="profile-header">
+          <div class="profile-avatar" id="profile-avatar-initials">?</div>
+          <div>
+            <div class="profile-name" id="profile-user-name">Guest User</div>
+            <div class="profile-meta" id="profile-user-meta">Not registered yet</div>
+            <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
+              <span class="badge badge-success" id="profile-verified-badge" style="display:none">✓ Aadhaar Verified</span>
+              <span class="badge" id="profile-plan-status" style="display:none">No plan</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px">
+          <div style="background:var(--bg);border-radius:var(--radius-md);padding:14px;text-align:center">
+            <div style="font-size:18px;font-weight:700;color:var(--success)" id="profile-claims-total">₹0</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px">Total Received</div>
+          </div>
+          <div style="background:var(--bg);border-radius:var(--radius-md);padding:14px;text-align:center">
+            <div style="font-size:18px;font-weight:700;color:var(--blue)" id="profile-claims-count">0</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px">Total Claims</div>
+          </div>
+          <div style="background:var(--bg);border-radius:var(--radius-md);padding:14px;text-align:center">
+            <div style="font-size:18px;font-weight:700;color:var(--purple)" id="profile-trust-score-mini">70</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px">Trust Score</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="card" style="margin-bottom:20px">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px">Trust Score</div>
+        <div style="display:flex;align-items:center;gap:20px">
+          <div id="profile-trust-circle" style="width:80px;height:80px;border-radius:50%;background:var(--success-light);border:4px solid var(--success);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <div style="text-align:center">
+              <div style="font-size:22px;font-weight:700;color:var(--success)" id="profile-trust-score">70</div>
+              <div style="font-size:10px;color:var(--success)">/100</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:15px;font-weight:600;margin-bottom:8px" id="profile-trust-label">Good standing</div>
+            <div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px">Tips to improve your score:</div>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="font-size:13px;color:var(--text-secondary)">✓ Renew on time (+5 pts)</div>
+              <div style="font-size:13px;color:var(--text-secondary)">✓ Switch to day shifts (+8 pts)</div>
+              <div style="font-size:13px;color:var(--text-secondary)">✓ Reduce zone risk (+10 pts)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="card" style="margin-bottom:20px">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px">Work Profile</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+          <div class="setting-row" style="border-bottom:1px solid var(--border);padding:12px 0">
+            <div style="font-size:13px;color:var(--text-muted)">Platform</div>
+            <div style="font-size:14px;font-weight:600" id="profile-wp-platform">—</div>
+          </div>
+          <div class="setting-row" style="border-bottom:1px solid var(--border);padding:12px 0;padding-left:16px">
+            <div style="font-size:13px;color:var(--text-muted)">City</div>
+            <div style="font-size:14px;font-weight:600" id="profile-wp-city">—</div>
+          </div>
+          <div class="setting-row" style="border-bottom:1px solid var(--border);padding:12px 0">
+            <div style="font-size:13px;color:var(--text-muted)">Shift</div>
+            <div style="font-size:14px;font-weight:600" id="profile-wp-shift">—</div>
+          </div>
+          <div class="setting-row" style="border-bottom:1px solid var(--border);padding:12px 0;padding-left:16px">
+            <div style="font-size:13px;color:var(--text-muted)">Experience</div>
+            <div style="font-size:14px;font-weight:600" id="profile-wp-exp">—</div>
+          </div>
+          <div class="setting-row" style="padding:12px 0">
+            <div style="font-size:13px;color:var(--text-muted)">Hours/day</div>
+            <div style="font-size:14px;font-weight:600" id="profile-wp-hours">—</div>
+          </div>
+          <div class="setting-row" style="padding:12px 0;padding-left:16px">
+            <div style="font-size:13px;color:var(--text-muted)">Earnings</div>
+            <div style="font-size:14px;font-weight:600" id="profile-wp-earnings">—</div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="card" style="margin-bottom:20px">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px">Current Policy</div>
+        <div class="setting-row">
+          <div class="setting-label">Plan</div>
+          <div style="font-weight:600" id="profile-plan-name">No plan active</div>
+        </div>
+        <div class="setting-row">
+          <div class="setting-label">Coverage</div>
+          <div style="font-weight:600" id="profile-plan-coverage">—</div>
+        </div>
+        <div class="setting-row">
+          <div class="setting-label">Weekly Premium</div>
+          <div style="font-weight:600" id="profile-plan-premium">—</div>
+        </div>
+        <div class="setting-row" style="border-bottom:none">
+          <div class="setting-label">Status</div>
+          <span class="badge badge-default" id="profile-plan-status">Not enrolled</span>
+        </div>
+        <button class="btn btn-secondary" style="width:100%;margin-top:16px" onclick="navigate('register')">
+          Change / Renew Plan
+        </button>
+      </div>
+
+      
+      <div class="card" style="margin-bottom:20px">
+        <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px">Notifications</div>
+        <div class="setting-row">
+          <div>
+            <div class="setting-label">Weather Alerts</div>
+            <div class="setting-desc">Get notified before triggers activate</div>
+          </div>
+          <div class="toggle on" id="notif-weather" onclick="toggleNotif('weather')"></div>
+        </div>
+        <div class="setting-row">
+          <div>
+            <div class="setting-label">Payout Notifications</div>
+            <div class="setting-desc">Instant SMS + app push when paid</div>
+          </div>
+          <div class="toggle on" id="notif-payout" onclick="toggleNotif('payout')"></div>
+        </div>
+        <div class="setting-row">
+          <div>
+            <div class="setting-label">Renewal Reminders</div>
+            <div class="setting-desc">Remind 2 days before renewal</div>
+          </div>
+          <div class="toggle on" id="notif-renewal" onclick="toggleNotif('renewal')"></div>
+        </div>
+        <div class="setting-row" style="border-bottom:none">
+          <div>
+            <div class="setting-label">Marketing Messages</div>
+            <div class="setting-desc">Product updates and offers</div>
+          </div>
+          <div class="toggle" id="notif-marketing" onclick="toggleNotif('marketing')"></div>
+        </div>
+      </div>
+
+      
+      <div class="card">
+        <button class="btn btn-destructive" style="width:100%" onclick="logout()">Log out</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="page-admin" class="page" style="background:var(--bg);">
+  <div class="app-header">
+    <div class="nav-logo" onclick="navigate('home')" style="cursor:pointer">
+      <div class="logo-icon"><svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      Zenvest
+    </div>
+    <button class="btn btn-ghost" onclick="navigate('home')">← Back to site</button>
+  </div>
+  <div style="padding-top:68px">
+    <div class="admin-banner">
+      <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Admin View — Zenvest Operations Dashboard
+      <span class="badge badge-warning" style="margin-left:8px">Internal Only</span>
+    </div>
+    <div style="max-width:1100px;margin:0 auto;padding:36px 32px">
+
+      <div style="margin-bottom:32px">
+        <h2 style="font-size:28px;font-weight:700;margin-bottom:6px">Operations Overview</h2>
+        <p style="color:var(--text-secondary)">Week of 31 Mar – 6 Apr 2025</p>
+      </div>
+
+      <div class="admin-grid">
+        <div class="admin-stat">
+          <div class="stat-number">12,418</div>
+          <div class="stat-label">Active Policies</div>
+          <div class="stat-trend" style="color:var(--success)">↑ +324 this week</div>
+        </div>
+        <div class="admin-stat">
+          <div class="stat-number">₹18.5L</div>
+          <div class="stat-label">Premiums Collected</div>
+          <div class="stat-trend" style="color:var(--success)">↑ +12% MoM</div>
+        </div>
+        <div class="admin-stat">
+          <div class="stat-number">₹2.1 Cr</div>
+          <div class="stat-label">Total Payouts</div>
+          <div class="stat-trend" style="color:var(--text-muted)">All-time</div>
+        </div>
+        <div class="admin-stat">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Fraud Alerts</div>
+          <div class="stat-trend" style="color:var(--error)">⚠ Requires action</div>
+        </div>
+      </div>
+
+      
+      <div class="card" style="margin-bottom:28px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div style="font-size:16px;font-weight:700">Zone Heatmap</div>
+          <span class="badge badge-default">Risk intensity</span>
+        </div>
+        <div class="zone-heatmap">
+          <div class="zone-cell" style="background:#FEE2E2;color:#991B1B">Mumbai<br><small>HIGH</small></div>
+          <div class="zone-cell" style="background:#FEF3C7;color:#92400E">Delhi<br><small>MED</small></div>
+          <div class="zone-cell" style="background:#FEE2E2;color:#991B1B">Bengaluru<br><small>HIGH</small></div>
+          <div class="zone-cell" style="background:#DCFCE7;color:#166534">Pune<br><small>LOW</small></div>
+          <div class="zone-cell" style="background:#FEF3C7;color:#92400E">Hyderabad<br><small>MED</small></div>
+          <div class="zone-cell" style="background:#DCFCE7;color:#166534">Chennai<br><small>LOW</small></div>
+          <div class="zone-cell" style="background:#FEF3C7;color:#92400E">Kolkata<br><small>MED</small></div>
+          <div class="zone-cell" style="background:#DCFCE7;color:#166534">Ahmedabad<br><small>LOW</small></div>
+          <div class="zone-cell" style="background:#FEE2E2;color:#991B1B">Noida<br><small>HIGH</small></div>
+          <div class="zone-cell" style="background:#FEF3C7;color:#92400E">Jaipur<br><small>MED</small></div>
+          <div class="zone-cell" style="background:#DCFCE7;color:#166534">Surat<br><small>LOW</small></div>
+          <div class="zone-cell" style="background:#FEF3C7;color:#92400E">Lucknow<br><small>MED</small></div>
+        </div>
+      </div>
+
+      
+      <div class="card" style="margin-bottom:28px">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div style="font-size:16px;font-weight:700">Fraud Alerts</div>
+          <span class="badge badge-error">2 Active</span>
+        </div>
+        <div class="fraud-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--error)" stroke-width="2" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div style="flex:1">
+            <div style="font-weight:700;font-size:14px;color:#991B1B">Suspicious claims pattern — Policy #ZV-8832</div>
+            <div style="font-size:13px;color:#B91C1C">3 manual claims in 8 days — same zone, unusual timing</div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-sm btn-destructive">Flag</button>
+            <button class="btn btn-sm btn-secondary">Review</button>
+          </div>
+        </div>
+        <div class="fraud-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" stroke="var(--error)" stroke-width="2" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div style="flex:1">
+            <div style="font-weight:700;font-size:14px;color:#991B1B">Location mismatch — Policy #ZV-5104</div>
+            <div style="font-size:13px;color:#B91C1C">Registered in Mumbai, claims from Pune 3 times</div>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-sm btn-destructive">Flag</button>
+            <button class="btn btn-sm btn-secondary">Review</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+          <div style="font-size:16px;font-weight:700">Next-Week Risk Predictions</div>
+          <span class="badge badge-info">AI Model v2.1</span>
+        </div>
+        <table class="risk-table">
+          <thead>
+            <tr>
+              <th>Zone</th>
+              <th>Predicted Risk</th>
+              <th>Active Policies</th>
+              <th>Expected Payouts</th>
+              <th>Weather Alert</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Mumbai</strong></td>
+              <td><span class="badge badge-error">High</span></td>
+              <td>2,840</td>
+              <td style="color:var(--error);font-weight:700">₹4.2L</td>
+              <td><span class="badge badge-warning">Monsoon</span></td>
+            </tr>
+            <tr>
+              <td><strong>Delhi NCR</strong></td>
+              <td><span class="badge badge-warning">Medium</span></td>
+              <td>3,120</td>
+              <td style="color:var(--warning);font-weight:700">₹2.1L</td>
+              <td><span class="badge badge-warning">Heatwave</span></td>
+            </tr>
+            <tr>
+              <td><strong>Bengaluru</strong></td>
+              <td><span class="badge badge-error">High</span></td>
+              <td>1,980</td>
+              <td style="color:var(--error);font-weight:700">₹3.1L</td>
+              <td><span class="badge badge-error">Heavy Rain</span></td>
+            </tr>
+            <tr>
+              <td><strong>Pune</strong></td>
+              <td><span class="badge badge-success">Low</span></td>
+              <td>980</td>
+              <td style="color:var(--success);font-weight:700">₹0.4L</td>
+              <td><span class="badge badge-default">Clear</span></td>
+            </tr>
+            <tr>
+              <td><strong>Hyderabad</strong></td>
+              <td><span class="badge badge-warning">Medium</span></td>
+              <td>1,240</td>
+              <td style="color:var(--warning);font-weight:700">₹1.2L</td>
+              <td><span class="badge badge-warning">AQI Alert</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/state.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/registration.js"></script>
+<script src="js/risk.js"></script>
+<script src="js/plans.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/triggers.js"></script>
+<script src="js/claims.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/main.js"></script>
+
+<div id="demo-video-fullscreen" style="display:none;position:fixed;inset:0;z-index:9000;background:#000;flex-direction:column;" onclick="closeDemoVideo()">
+  
+  <button onclick="closeDemoVideo()" style="position:absolute;top:16px;right:16px;z-index:10;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.1);border:none;color:white;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1" title="Close (Esc)">✕</button>
+  
+  <iframe id="demo-youtube-iframe" src="" style="width:100%;height:100%;border:0;" allow="autoplay; encrypted-media; fullscreen" allowfullscreen onclick="event.stopPropagation()"></iframe>
+</div>
+
+</body>
+</html>
