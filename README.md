@@ -5,6 +5,8 @@
 This README explains how to connect the **frontend**, **backend**, and **ML services** for Zenvest so the full flow works during demo and submission.
 
 ---
+## Pitch Deck
+https://drive.google.com/file/d/1GkRFxKAaFZhlX8nB0D5gXBliamxVOCOT/view?usp=sharing
 
 ## 1. Recommended project structure
 
