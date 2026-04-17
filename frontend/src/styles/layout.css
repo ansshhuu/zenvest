@@ -1,0 +1,67 @@
+/* ── SECTIONS ─────────────────────────────────────────────────────────────────── */
+.section { padding: 96px 0; }
+.section-alt { background: var(--surface); }
+.section-dark { background: var(--text); color: #fff; }
+
+/* ── GRIDS ───────────────────────────────────────────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* ── FLEX UTILITIES ──────────────────────────────────────────────────────────── */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-sm { gap: 8px; }
+.gap-md { gap: 16px; }
+.gap-lg { gap: 24px; }
+
+/* ── SPACING ─────────────────────────────────────────────────────────────────── */
+.mt-sm { margin-top: 8px; }
+.mt-md { margin-top: 16px; }
+.mt-lg { margin-top: 24px; }
+.mb-sm { margin-bottom: 8px; }
+.mb-md { margin-bottom: 16px; }
+.mb-lg { margin-bottom: 24px; }
+
+/* ── DIVIDER ─────────────────────────────────────────────────────────────────── */
+.divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+/* ── TEXT UTILITIES ──────────────────────────────────────────────────────────── */
+.text-center { text-align: center; }
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
+.text-success { color: var(--success); }
+.text-error { color: var(--error); }
+.text-warning { color: var(--warning); }
+.font-bold { font-weight: 700; }
+.font-medium { font-weight: 500; }
+
+/* ── PAGE WRAPPERS ───────────────────────────────────────────────────────────── */
+.page-body { padding-top: 60px; min-height: 100vh; background: var(--bg); }
+.page-inner { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+
+/* ── LOADING STATE ───────────────────────────────────────────────────────────── */
+.loading-spinner {
+  width: 32px; height: 32px; border: 3px solid var(--border);
+  border-top-color: var(--primary); border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.loading-center { display: flex; align-items: center; justify-content: center; padding: 60px; }
+
+/* ── EMPTY STATE ─────────────────────────────────────────────────────────────── */
+.empty-state { text-align: center; padding: 60px 20px; }
+.empty-state-icon { font-size: 48px; margin-bottom: 16px; }
+.empty-state-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.empty-state-desc { font-size: 15px; color: var(--text-secondary); }
+
+/* ── AADHAAR UPLOAD ──────────────────────────────────────────────────────────── */
+.upload-zone {
+  border: 2px dashed var(--border); border-radius: var(--radius);
+  padding: 32px; text-align: center; cursor: pointer;
+  transition: all var(--transition);
+}
+.upload-zone:hover { border-color: var(--primary); background: var(--primary-light); }
+.upload-zone.uploaded { border-color: var(--success); background: var(--success-light); }
