@@ -5,6 +5,9 @@ It replaces manual claims with **automated environmental triggers** (weather, AQ
 
 <img width="1890" height="987" alt="image" src="https://github.com/user-attachments/assets/977e2199-9761-401e-bf09-475c495deb3e" />
 
+## Pitch Deck
+
+[View the Zenvest pitch deck](https://drive.google.com/file/d/1GkRFxKAaFZhlX8nB0D5gXBliamxVOCOT/view?usp=sharing)
 
 ---
 ## 📋 Table of Contents
