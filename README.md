@@ -344,3 +344,22 @@ We ensure fraud checks don’t hurt genuine users.
 
 ---
 
+🚀 Local Setup Note (Important)
+
+⚠️ All services in this project are independent (microservices architecture)
+
+Each service runs separately and must be started individually
+Services communicate over APIs, so proper networking is required
+✅ Current Working Setup
+Tested on same device (localhost)
+Tested on same WiFi network (multiple devices)
+❌ Limitations
+Will not work across different networks without additional configuration
+No centralized orchestration yet
+🌐 Deployment Status
+
+🚧 Project is currently in development mode
+
+The application is not deployed yet
+All testing is being done locally
+Cloud deployment (AWS + Docker + CI/CD) is planned for future phases
